@@ -258,47 +258,47 @@ X:\ccl.EXE Experiment_09.pbm
 * Computer Vision and Image Understanding, vol. 93, no. 2, Feb. 2004, pp. 206 - 220. *
 **************************************************************************************
 No. 1
-Processing Time: 29.421816 milliseconds
+Processing Time: 16.985400 milliseconds
 CC# 21205.
 
 No. 2
-Processing Time: 31.627049 milliseconds
+Processing Time: 16.932000 milliseconds
 CC# 21205.
 
 No. 3
-Processing Time: 30.083544 milliseconds
+Processing Time: 16.945800 milliseconds
 CC# 21205.
 
 No. 4
-Processing Time: 28.750211 milliseconds
+Processing Time: 16.908500 milliseconds
 CC# 21205.
 
 No. 5
-Processing Time: 31.416876 milliseconds
+Processing Time: 16.958100 milliseconds
 CC# 21205.
 
 No. 6
-Processing Time: 30.226951 milliseconds
+Processing Time: 16.980400 milliseconds
 CC# 21205.
 
 No. 7
-Processing Time: 30.861025 milliseconds
+Processing Time: 22.265200 milliseconds
 CC# 21205.
 
 No. 8
-Processing Time: 30.237223 milliseconds
+Processing Time: 16.948200 milliseconds
 CC# 21205.
 
 No. 9
-Processing Time: 30.907247 milliseconds
+Processing Time: 17.476400 milliseconds
 CC# 21205.
 
 No. 10
-Processing Time: 31.006408 milliseconds
+Processing Time: 17.084900 milliseconds
 CC# 21205.
 
-Total of The Processing Time: 304.538349
-Average Processing Time: 30.453835
+Total of The Processing Time: 175.484900 milliseconds
+Average Processing Time: 17.548490 milliseconds
 Press any key to continue . . .
 		</td>
 	</tr>
