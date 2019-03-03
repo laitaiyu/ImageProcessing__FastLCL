@@ -16,6 +16,7 @@ void ContourTracing(int cy, int cx, int labelindex, int tracingdirection, char *
 int ConnectedComponentLabeling(char *fn, char *option);
 int iI = 0;
 double dbTimeSum = 0.0f;
+int iStepCount = 0;
 
 int read_pbm(char *fn, int *pwidth, int *pheight, char *option)
 {
@@ -195,6 +196,7 @@ void Tracer(int *cy, int *cx, int *tracingdirection)
 		{
 			labelmap[y][x] = -1;
 			*tracingdirection = (*tracingdirection + 1) % 8;
+			//iStepCount++;
 		}
 		else
 		{
@@ -254,6 +256,7 @@ int ConnectedComponentLabeling(char *fn, char *option)
 
 	if(read_pbm(fn, &width, &height, option) != 1)
 	{
+		printf("File not found");
 		return -1;
 	}
 
@@ -304,18 +307,18 @@ int ConnectedComponentLabeling(char *fn, char *option)
     dfMinus = (double)(QPart2-QPart1);
     dfTim = dfMinus / dfFreq;
     dfTim = dfTim * 1000.0f;
-    fprintf(stderr, "Processing Time: %f milliseconds\n", dfTim);
+    printf("Processing Time: %f milliseconds\n", dfTim);
     dbTimeSum += dfTim;
-    Sleep(0);
 
-    fprintf(stderr, "CC# %d.\n", ConnectedComponentsCount);
+    printf("CC# %d.\n", ConnectedComponentsCount);
     cx = strlen(fn);
 	memcpy(buf, fn, cx - 4);
 	buf[cx - 4] = '\0';
 	strcat(buf, "_");
 	strcat(buf, option);
 	write_rlt(buf, ConnectedComponentsCount, width, height, option);
-    Sleep(500);
+
+	//printf("Step Count: %d\n", iStepCount);
 
 	for(cy = 0; cy < height; cy++)
 	{
@@ -363,16 +366,16 @@ void main(int argc, char **argv)
             printf("* A Linear-Time Component-Labeling Algorithm Using Contour Tracing Technique.        *\n");
             printf("* Computer Vision and Image Understanding, vol. 93, no. 2, Feb. 2004, pp. 206 - 220. *\n");
             printf("**************************************************************************************\n");
-            dbTimeSum = 0.0f;
-            for (iI = 0; iI < 10; iI++)
+			dbTimeSum = 0.0f;
+			for (iI = 0; iI < 10; iI++)
             {
-                Sleep(0);
+				iStepCount = 0;
                 printf("No. %d\n", iI+1);
                 ConnectedComponentLabeling(argv[1], "1");
                 printf("\n");
             }
-            printf("Total of The Processing Time: %f\n", dbTimeSum);
-            printf("Average Processing Time: %f\n", (dbTimeSum / 10.0f));
+			printf("Total of The Processing Time: %f milliseconds\n", dbTimeSum);
+			printf("Average Processing Time: %f milliseconds\n", (dbTimeSum / 10.0f));
         }
     }
     system("pause");
